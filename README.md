@@ -24,3 +24,7 @@ This project is a full-stack web application that allows users to upload an imag
 ```bash
 git clone https://github.com/yourusername/image-color-extractor.git
 cd image-color-extractor
+install dependencies
+Run the files
+Server: uvicorn server.server:app --reload
+Client: cd client / npm run build
