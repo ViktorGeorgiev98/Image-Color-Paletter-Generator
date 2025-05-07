@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pillow
+numpy
+scikit-learn
+gunicorn  # Add this for deployment
+python-dotenv  # For managing environment variables (optional)

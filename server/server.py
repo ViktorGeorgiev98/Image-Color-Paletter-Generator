@@ -4,9 +4,24 @@ from PIL import Image
 import numpy as np
 from sklearn.cluster import KMeans
 import io
+from fastapi.middleware.cors import CORSMiddleware
+
+# Add CORS middleware to the app
+origins = [
+    "http://localhost:5173",  # Your frontend URL
+    # You can also add other origins if necessary
+]
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Allows requests from the frontend origin
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 
 def extract_colors(image_bytes, num_colors=10):
